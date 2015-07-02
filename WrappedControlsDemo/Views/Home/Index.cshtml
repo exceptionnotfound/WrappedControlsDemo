@@ -1,0 +1,29 @@
+﻿@model WrappedControlsDemo.ViewModels.Home.HomeIndexVM
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using(Html.BeginForm("Index", "Home", FormMethod.Post))
+{ 
+    <div>
+        <div>
+            <div>
+                <label>
+                    @Html.DisplayNameFor(x => x.RegularText)
+                    @Html.TextBoxFor(x => x.RegularText)
+                </label>
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.WrappedTextBoxFor(x => x.WrappedText)
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Go!" />
+        </div>
+    </div>
+}
